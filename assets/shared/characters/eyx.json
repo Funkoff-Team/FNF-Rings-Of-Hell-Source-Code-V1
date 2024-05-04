@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				120,
+				350
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "eyx Idle"
+		},
+		{
+			"offsets": [
+				107,
+				433
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "eyx Up"
+		},
+		{
+			"offsets": [
+				-128,
+				348
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "eyx Right"
+		},
+		{
+			"offsets": [
+				124,
+				348
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "eyx Left"
+		},
+		{
+			"offsets": [
+				140,
+				328
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "eyx Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/EYX_Assets",
+	"position": [
+		-320,
+		-90
+	],
+	"healthicon": "eyx",
+	"flip_x": false,
+	"healthbar_colors": [
+		77,
+		88,
+		110
+	],
+	"camera_position": [
+		-300,
+		-410
+	],
+	"sing_duration": 5.8,
+	"scale": 1.2
+}

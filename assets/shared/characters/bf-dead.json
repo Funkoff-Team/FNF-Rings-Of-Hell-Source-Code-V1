@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				131
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "bfnew heisfuckingdieseveragain",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-3,
+				131
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "bfnew DeadLoop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				131
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "bfnew DeadConfirm",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/BFnew_Dead_Assets",
+	"position": [
+		30,
+		-240
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		80,
+		470
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

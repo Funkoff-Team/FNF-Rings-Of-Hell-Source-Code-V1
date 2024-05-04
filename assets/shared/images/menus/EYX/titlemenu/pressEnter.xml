@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="pressEnter.png">
+<SubTexture name="enter Loop0000" x="998" y="171" width="1016" height="169" frameX="-130" frameY="-562" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0001" x="998" y="171" width="1016" height="169" frameX="-130" frameY="-562" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0002" x="998" y="171" width="1016" height="169" frameX="-130" frameY="-562" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0003" x="0" y="0" width="998" height="176" frameX="-139" frameY="-560" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0004" x="0" y="0" width="998" height="176" frameX="-139" frameY="-560" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0005" x="0" y="0" width="998" height="176" frameX="-139" frameY="-560" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0006" x="0" y="176" width="975" height="173" frameX="-153" frameY="-563" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0007" x="0" y="176" width="975" height="173" frameX="-153" frameY="-563" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0008" x="0" y="176" width="975" height="173" frameX="-153" frameY="-563" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0009" x="0" y="349" width="1021" height="168" frameX="-130" frameY="-558" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0010" x="0" y="349" width="1021" height="168" frameX="-130" frameY="-558" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0011" x="0" y="349" width="1021" height="168" frameX="-130" frameY="-558" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0012" x="998" y="0" width="1026" height="171" frameX="-126" frameY="-559" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0013" x="998" y="0" width="1026" height="171" frameX="-126" frameY="-559" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Loop0014" x="998" y="0" width="1026" height="171" frameX="-126" frameY="-559" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0000" x="0" y="517" width="1035" height="168" frameX="-122" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0001" x="0" y="685" width="1023" height="168" frameX="-128" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0002" x="0" y="853" width="1013" height="168" frameX="-133" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0003" x="1021" y="349" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0004" x="1023" y="685" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0005" x="1013" y="853" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0006" x="0" y="1021" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0007" x="998" y="1021" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0008" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0009" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0010" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0011" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0012" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0013" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0014" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0015" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0016" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0017" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0018" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0019" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="enter Pressed0020" x="0" y="1189" width="998" height="168" frameX="-140" frameY="-564" frameWidth="1280" frameHeight="1280" />
+</TextureAtlas>

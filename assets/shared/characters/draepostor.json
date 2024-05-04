@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				227,
+				323
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "draepostor Up"
+		},
+		{
+			"offsets": [
+				-16,
+				349
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "draepostor Right"
+		},
+		{
+			"offsets": [
+				164,
+				359
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "draepostor Left"
+		},
+		{
+			"offsets": [
+				140,
+				338
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "draepostor Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				120,
+				350
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "draepostor Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Draepostor_Assets",
+	"position": [
+		-20,
+		200
+	],
+	"healthicon": "draepostor",
+	"flip_x": false,
+	"healthbar_colors": [
+		84,
+		108,
+		153
+	],
+	"camera_position": [
+		0,
+		-140
+	],
+	"sing_duration": 5.8,
+	"scale": 0.9
+}

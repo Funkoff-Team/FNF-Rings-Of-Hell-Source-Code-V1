@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="GFnew_Assets.png">
+<SubTexture name="gfnew danceLeft0000" x="1604" y="0" width="802" height="823" frameX="-239" frameY="-192" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0001" x="1604" y="0" width="802" height="823" frameX="-239" frameY="-192" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0002" x="1604" y="825" width="802" height="821" frameX="-239" frameY="-194" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0003" x="1604" y="825" width="802" height="821" frameX="-239" frameY="-194" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0004" x="0" y="825" width="802" height="823" frameX="-239" frameY="-191" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0005" x="0" y="825" width="802" height="823" frameX="-239" frameY="-191" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0006" x="802" y="0" width="802" height="824" frameX="-239" frameY="-190" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0007" x="802" y="0" width="802" height="824" frameX="-239" frameY="-190" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0008" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0009" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0010" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0011" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0012" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0013" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0014" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0015" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0016" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceLeft0017" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0000" x="2406" y="821" width="802" height="820" frameX="-239" frameY="-195" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0001" x="2406" y="821" width="802" height="820" frameX="-239" frameY="-195" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0002" x="0" y="1648" width="802" height="816" frameX="-239" frameY="-199" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0003" x="0" y="1648" width="802" height="816" frameX="-239" frameY="-199" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0004" x="2406" y="0" width="802" height="821" frameX="-239" frameY="-193" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0005" x="2406" y="0" width="802" height="821" frameX="-239" frameY="-193" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0006" x="802" y="825" width="802" height="823" frameX="-239" frameY="-191" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0007" x="802" y="825" width="802" height="823" frameX="-239" frameY="-191" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0008" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0009" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0010" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0011" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0012" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0013" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0014" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0015" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0016" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="gfnew danceRight0017" x="0" y="0" width="802" height="825" frameX="-239" frameY="-189" frameWidth="1280" frameHeight="1280" />
+</TextureAtlas>

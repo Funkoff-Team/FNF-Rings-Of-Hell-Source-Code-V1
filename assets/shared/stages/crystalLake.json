@@ -1,0 +1,9 @@
+{
+	"directory": "eyx",
+	"defaultZoom": 0.6,
+	"isPixelStage": false,
+
+	"boyfriend": [1500, -100],
+	"girlfriend": [800, -180],
+	"opponent": [400, -100]
+}
