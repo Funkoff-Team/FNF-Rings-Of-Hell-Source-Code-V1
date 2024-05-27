@@ -11,7 +11,8 @@ import states.SoundTestMenu;
 
 class MainMenuState extends MusicBeatState
 {
-	public static var gameVersion:String = '1.0.0';
+	public static var gameVersion:String = '1.1.0';
+
 
 	public static var curSelected:Int = 0;
 

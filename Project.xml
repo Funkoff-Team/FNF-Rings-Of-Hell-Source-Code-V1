@@ -3,7 +3,7 @@
 
 	<!-- _________________________ Appication Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Rings Of Hell" file="RingsOfHell" packageName="com.funkoff.ringsofhell" package="com.funkoff.ringsofhell" main="Main" version="1.0.0" company="Funkoff" />
+	<app title="Friday Night Funkin': Rings Of Hell" file="RingsOfHell" packageName="com.funkoff.ringsofhell" package="com.funkoff.ringsofhell" main="Main" version="1.1.0" company="Funkoff Team" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />

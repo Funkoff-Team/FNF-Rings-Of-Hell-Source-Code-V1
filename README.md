@@ -4,8 +4,8 @@
 
 Omagad Spaghetti Code Real No Way-
 
-Okay let's talk a bit about mod itself. Rings Of Hell are official revival/continuation of mod called Vs Eyx Takeover(or Redborn). Even if it's continuation, everything will be different. 
-Mod Owners: MaysLastPlay(Main Owner), GoshaCher360, LJeno, MR.Bruh
+Mod Description:
+After playing a Sonic romhack, BF and GF got weird error and they got teleported to a game. After sometime walking on green hills they found Sonic... but was it really Sonic? They'll have to find out that... before it's too late.
 
 ## Installation and Compiling:
 
