@@ -3,11 +3,13 @@ package backend;
 import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
 import flixel.input.gamepad.FlxGamepadInputID;
-
+import mobile.flixel.input.FlxMobileInputID;
 import states.TitleState;
 
 // Add a variable here and it will get automatically saved
 @:structInit class SaveVariables {
+	public var padalpha:Float = 0.5;
+	public var hitboxalpha:Float = 0.2;
 	public var downScroll:Bool = false;
 	public var middleScroll:Bool = false;
 	public var opponentStrums:Bool = true;
@@ -16,12 +18,12 @@ import states.TitleState;
 	public var autoPause:Bool = true;
 	public var antialiasing:Bool = true;
 	public var noteSkin:String = 'Default';
-	public var splashSkin:String = 'Vanilla';
-	public var splashAlpha:Float = 0.9;
+	public var splashSkin:String = 'Psych';
+	public var splashAlpha:Float = 0.6;
 	public var lowQuality:Bool = false;
 	public var shaders:Bool = true;
 	public var cacheOnGPU:Bool = #if !switch false #else true #end; //From Stilic
-	public var framerate:Int = 120;//144 권장
+	public var framerate:Int = 60;
 	public var camZooms:Bool = true;
 	public var hideHud:Bool = false;
 	public var noteOffset:Int = 0;
@@ -73,9 +75,13 @@ import states.TitleState;
 	public var goodWindow:Int = 90;
 	public var badWindow:Int = 135;
 	public var safeFrames:Float = 10;
-	public var guitarHeroSustains:Bool = false; //이거 키지마!!!
+	public var guitarHeroSustains:Bool = true;
 	public var discordRPC:Bool = true;
-	public var language:String = 'en-us';//한국어로 하려다 참았다
+  #if mobile
+  public var altControls:Bool = false;
+  public var altCCustom:String = "middle";
+  public var altCType:String = "space";
+  #end
 }
 
 class ClientPrefs {
@@ -123,6 +129,23 @@ class ClientPrefs {
 		'pause'			=> [START],
 		'reset'			=> [BACK]
 	];
+	public static var mobileBinds:Map<String, Array<FlxMobileInputID>> = [
+		'note_up'		=> [noteUP, UP2],
+		'note_left'		=> [noteLEFT, LEFT2],
+		'note_down'		=> [noteDOWN, DOWN2],
+		'note_right'	=> [noteRIGHT, RIGHT2],
+
+		'ui_up'			=> [UP, noteUP],
+		'ui_left'		=> [LEFT, noteLEFT],
+		'ui_down'		=> [DOWN, noteDOWN],
+		'ui_right'		=> [RIGHT, noteRIGHT],
+
+		'accept'		=> [A],
+		'back'			=> [B],
+		'pause'			=> [NONE],
+		'reset'			=> [NONE]
+	];
+	public static var defaultMobileBinds:Map<String, Array<FlxMobileInputID>> = null;
 	public static var defaultKeys:Map<String, Array<FlxKey>> = null;
 	public static var defaultButtons:Map<String, Array<FlxGamepadInputID>> = null;
 
@@ -143,14 +166,17 @@ class ClientPrefs {
 	{
 		var keyBind:Array<FlxKey> = keyBinds.get(key);
 		var gamepadBind:Array<FlxGamepadInputID> = gamepadBinds.get(key);
+		var mobileBind:Array<FlxMobileInputID> = mobileBinds.get(key);
 		while(keyBind != null && keyBind.contains(NONE)) keyBind.remove(NONE);
 		while(gamepadBind != null && gamepadBind.contains(NONE)) gamepadBind.remove(NONE);
+		while(mobileBind != null && mobileBind.contains(NONE)) mobileBind.remove(NONE);
 	}
 
 	public static function loadDefaultKeys()
 	{
 		defaultKeys = keyBinds.copy();
 		defaultButtons = gamepadBinds.copy();
+		defaultMobileBinds = mobileBinds.copy();
 	}
 
 	public static function saveSettings() {
@@ -165,6 +191,7 @@ class ClientPrefs {
 		save.bind('controls_v3', CoolUtil.getSavePath());
 		save.data.keyboard = keyBinds;
 		save.data.gamepad = gamepadBinds;
+		save.data.mobile = mobileBinds;
 		save.flush();
 		FlxG.log.add("Settings saved!");
 	}
@@ -232,6 +259,11 @@ class ClientPrefs {
 				var loadedControls:Map<String, Array<FlxGamepadInputID>> = save.data.gamepad;
 				for (control => keys in loadedControls)
 					if(gamepadBinds.exists(control)) gamepadBinds.set(control, keys);
+			}
+			if(save.data.mobile != null) {
+				var loadedControls:Map<String, Array<FlxMobileInputID>> = save.data.mobile;
+				for (control => keys in loadedControls)
+					if(mobileBinds.exists(control)) mobileBinds.set(control, keys);
 			}
 			reloadVolumeKeys();
 		}
