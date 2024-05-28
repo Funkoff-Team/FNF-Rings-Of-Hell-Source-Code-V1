@@ -9,10 +9,13 @@ After playing a Sonic romhack, BF and GF got weird error and they got teleported
 
 ## Mobile Port Credits
 
-[MaysLastPlay](https://youtube.com/@MaysLastPlay)
-[Idklool](https://youtube.com/@Idklool121)
-[MarioMaster](https://youtube.com/@MarioMaster39)
-[Karim-Akra](https://youtube.com/@Karim-Akra)
+• [MaysLastPlay](https://youtube.com/@MaysLastPlay)
+
+• [Idklool](https://youtube.com/@Idklool121)
+
+• [MarioMaster](https://youtube.com/@MarioMaster39)
+
+• [Karim-Akra](https://youtube.com/@Karim-Akra)
 
 ### Installation and Compiling:
 
