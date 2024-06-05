@@ -1543,7 +1543,7 @@ class ChartingState extends MusicBeatState
 		bullshitUI.add(title);
 	}
 
-	/*override*/ function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>)
+	override function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>)
 	{
 		if (id == FlxUICheckBox.CLICK_EVENT)
 		{
