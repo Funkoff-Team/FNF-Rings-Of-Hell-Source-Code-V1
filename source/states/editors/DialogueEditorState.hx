@@ -244,7 +244,7 @@ class DialogueEditorState extends MusicBeatState
 		#end
 	}
 
-	/*override*/ function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>) {
+	override function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>) {
 		if(id == FlxUIInputText.CHANGE_EVENT && (sender is FlxUIInputText)) {
 			if (sender == characterInputText)
 			{
