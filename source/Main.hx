@@ -1,9 +1,5 @@
 package;
 
-#if android
-import android.content.Context;
-#end
-
 import debug.FPSCounter;
 
 import flixel.graphics.FlxGraphic;
