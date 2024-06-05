@@ -356,7 +356,7 @@ class NoteSplashDebugState extends MusicBeatState
 		#end
 	}
 	
-	/*override*/ function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>)
+	override function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>)
 	{
 		if (id == FlxUINumericStepper.CHANGE_EVENT && (sender is FlxUINumericStepper))
 		{
