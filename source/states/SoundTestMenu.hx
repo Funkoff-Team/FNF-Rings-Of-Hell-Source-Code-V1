@@ -49,7 +49,7 @@ class SoundTestMenu extends MusicBeatState
 			cam.bgColor.alpha = 0;
 			FlxG.cameras.setDefaultDrawTarget(cam, true);
 
-			DiscordClient.changePresence('In the Sound Test Menu', null);
+			//DiscordClient.changePresence('In the Sound Test Menu', null);
 
 			whiteshit = new FlxSprite().makeGraphic(1280, 720, FlxColor.WHITE);
 			whiteshit.alpha = 0;
