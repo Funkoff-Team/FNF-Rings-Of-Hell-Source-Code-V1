@@ -33,7 +33,7 @@
     {
       "name": "hxcpp",
       "type": "haxelib",
-      "version": null
+      "version": "4.2.1"
 
     },
     {
@@ -44,7 +44,7 @@
     {
       "name": "hxCodec",
       "type": "haxelib",
-      "version": "2.6.1"
+      "version": "2.6.0"
     },
     {
       "name": "SScript",
@@ -62,18 +62,11 @@
       "version": null
     },
     {
-      "name": "hxdiscord_rpc",
+      "name": "extension-androidtools",
       "type": "git",
       "dir": null,
       "ref": "main",
-      "url": "https://github.com/MAJigsaw77/hxdiscord-rpc"
-    },
-    {
-      "name": "fnf-modcharting-tools",
-      "type": "git",
-      "dir": null,
-      "ref": "main",
-      "url": "https://github.com/EdwhakKB/FNF-Modcharting-Tools"
+      "url": "https://github.com/MaysLastPlay77/extension-androidtools"
     },
     {
       "name": "flxanimate",
