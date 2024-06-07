@@ -10,6 +10,7 @@ import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
 import flixel.addons.effects.FlxSkewedSprite;
 import flixel.math.FlxMath;
+import openfl.utils.Assets;
 
 class FreeplayState extends MusicBeatState
 {
@@ -103,7 +104,7 @@ class FreeplayState extends MusicBeatState
 		var folderNum:Int = 0;
 		for (i in folderList)
 		{
-			if (FileSystem.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || FileSystem.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)))
+			if (Assets.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)))
 			{
 				var boxLol:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
 				boxLol.loadGraphic(Paths.image('menus/EYX/freeplay/FreeBox'));
@@ -113,7 +114,7 @@ class FreeplayState extends MusicBeatState
 				boxedShit.add(boxLol);
 
 				var artShit:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
-				if (FileSystem.exists(Paths.getPath('images/menus/EYX/freeplay/portraits/${i}.png', TEXT)))
+				if (Assets.exists(Paths.getPath('images/menus/EYX/freeplay/portraits/${i}.png', TEXT)))
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/${i}'));
 				else
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/error'));
@@ -390,7 +391,7 @@ class FreeplayState extends MusicBeatState
 		var libraryArray:Array<String> = [];
 
 		#if sys
-		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
+		var unfilteredLibrary = Assets.list().filter(text -> text.contains('$subDir/$library'));
 
 		for (folder in unfilteredLibrary)
 		{

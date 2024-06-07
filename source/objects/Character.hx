@@ -97,7 +97,7 @@ class Character extends FlxSprite
 				var characterPath:String = 'characters/$curCharacter.json';
 
 				var path:String = Paths.getPath(characterPath, TEXT, null, true);
-				#if MODS_ALLOWED
+				#if (MODS_ALLOWED && !mobile)
 				if (!FileSystem.exists(path))
 				#else
 				if (!Assets.exists(path))
@@ -110,7 +110,7 @@ class Character extends FlxSprite
 
 				try
 				{
-					#if MODS_ALLOWED
+					#if (MODS_ALLOWED && !mobile)
 					loadCharacterFile(Json.parse(File.getContent(path)));
 					#else
 					loadCharacterFile(Json.parse(Assets.getText(path)));
@@ -141,7 +141,7 @@ class Character extends FlxSprite
 
 		#if flxanimate
 		var animToFind:String = Paths.getPath('images/' + json.image + '/Animation.json', TEXT, null, true);
-		if (#if MODS_ALLOWED FileSystem.exists(animToFind) || #end Assets.exists(animToFind))
+		if (#if (MODS_ALLOWED && !mobile) FileSystem.exists(animToFind) || #end Assets.exists(animToFind))
 			isAnimateAtlas = true;
 		#end
 
