@@ -13,7 +13,9 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
 import states.TitleState;
-import states.SpecsDetector;
+import states.Intro;
+import sys.FileSystem;
+import sys.io.File;
 
 #if linux
 import lime.graphics.Image;
@@ -73,7 +75,7 @@ class Main extends Sprite
 	{
 		super();
 
-    SUtil.gameCrashCheck();
+		Generic.initCrashHandler();
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
 		#if android
@@ -104,6 +106,15 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+
+		#if android 
+		Generic.mode = ROOTDATA;
+
+		if (!FileSystem.exists('assets')) {
+			FileSystem.createDirectory('assets');
+		}
+		#end
+
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -115,8 +126,6 @@ class Main extends Sprite
 			game.width = Math.ceil(stageWidth / game.zoom);
 			game.height = Math.ceil(stageHeight / game.zoom);
 		}
-	
-		 SUtil.doTheCheck();
 	
 		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
 		Controls.instance = new Controls();
