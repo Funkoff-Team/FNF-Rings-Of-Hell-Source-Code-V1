@@ -51,7 +51,7 @@ class Intro extends MusicBeatState
 
     if (intro != null)
     {
-      intro.bitmap.onEndReached.add(onIntroEnd);
+      intro.onEndReached.add(onIntroEnd);
       add(intro);
 
       openfl.Assets.loadBytes(filePath).onComplete(function(bytes:openfl.utils.ByteArray):Void
