@@ -2,11 +2,8 @@ package states;
 
 #if VIDEOS_ALLOWED
 import hxvlc.flixel.FlxVideo;
-#end
 
 import states.TitleState;
-import videos.Video;
-import videos.VideoSprite;
 
 using StringTools;
 
@@ -33,3 +30,4 @@ class Intro extends MusicBeatState
   }
 	}
 }
+#end
