@@ -25,6 +25,9 @@ class CheatingState extends MusicBeatState
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
    var fileName:String = Paths.video('ikwhatyouredoing');
 
+    	if (OpenFlAssets.exists(fileName))
+    	foundFile = true;
+
 		  cutVid.startVideo(fileName);
 			cutVid.onVideoEnd.addOnce(() -> {
 			 funnyDialogs();
