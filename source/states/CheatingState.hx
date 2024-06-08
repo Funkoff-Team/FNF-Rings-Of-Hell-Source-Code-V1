@@ -59,8 +59,6 @@ class CheatingState extends MusicBeatState
       {
         if (screamer.load(bytes))
           screamer.play();
-
-        onVideoStarted.dispatch();
       });
     }
     else
