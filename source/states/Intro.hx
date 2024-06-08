@@ -26,7 +26,7 @@ class Intro extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-  public function onIntroEnd():Void
+  public function finishVideo():Void
   {
 		cutVid.destroy();
 		remove(cutVid);
