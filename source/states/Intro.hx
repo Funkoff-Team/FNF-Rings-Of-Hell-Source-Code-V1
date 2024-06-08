@@ -34,15 +34,18 @@ class Intro extends MusicBeatState
 		if(foundFile) {
 		cutVid.startVideo(fileName);
 			cutVid.onVideoEnd.addOnce(() -> {
-			if (finishCallback != null)
-			finishCallback();
+			finish();
 			 MusicBeatState.switchState(new TitleState()); 
 			});
     } else {
-			if (finishCallback != null)
-			finishCallback();
+			finish();
 			FlxG.log.warn('Couldnt find video file: ' + fileName);
 		}
+	public function finish()
+	{
+		if (finishCallback != null)
+			finishCallback();
+	}
   }
 }
 #end
