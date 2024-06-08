@@ -12,15 +12,31 @@ class CheatingState extends MusicBeatState
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
   var cutVid:Video = new Video();
+	var foundFile:Bool = false;
 
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
-		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
-		add(cutVid);
+   var fileName:String = Paths.video('ikwhatyouredoing');
+		cutVid.startVideo(Paths.video(fileName);
+
+    	#if sys
+    	FileSystem.exists(fileName)
+    	#else
+    	OpenFlAssets.exists(fileName) 
+    	#end 
+    	foundFile = true;
+
+		if(foundFile) {
 			cutVid.onVideoEnd.addOnce(() -> {
-			 cutVid.kill();
+			 if (finishCallback != null)
+			finishCallback();
 			 funnyDialogs();
 			});
+    } else {
+			if (finishCallback != null)
+			finishCallback();
+			FlxG.log.warn('Couldnt find video file: ' + fileName);
+		}
  }
 
 function funnyDialogs(){
