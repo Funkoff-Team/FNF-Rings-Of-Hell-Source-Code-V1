@@ -18,16 +18,12 @@ class Intro extends MusicBeatState
 		cutVid.startVideo(Paths.video('newgroundsintro'));
 		add(cutVid);
     cutVid.onVideoEnd.addOnce(finishVideo);
-  }
-
-	override function update(elapsed:Float)
-	{
-  public function finishVideo():Void
+  function finishVideo():Void
   {
 		cutVid.destroy();
 		remove(cutVid);
     MusicBeatState.switchState(new TitleState()); 
   }
-	}
+    }
 }
 #end
