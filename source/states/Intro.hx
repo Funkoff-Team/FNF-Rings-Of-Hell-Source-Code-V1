@@ -13,12 +13,23 @@ class Intro extends MusicBeatState
 
     override public function create()
     {
-		cutVid.startVideo(Paths.video('newgroundsintro'));
-		add(cutVid);
+		var fileName:String = Paths.video('newgroundsintro');
+		
+    	#if sys
+    	FileSystem.exists(fileName)
+    	#else
+    	OpenFlAssets.exists(fileName) 
+    	#end 
+    	foundFile = true;
+
+		if(foundFile) {
+		cutVid.startVideo(fileName);
 			cutVid.onVideoEnd.addOnce(() -> {
-			  cutVid.kill();
+			if (finishCallback != null)
+			finishCallback();
 			 MusicBeatState.switchState(new TitleState()); 
 			});
     }
+  }
 }
 #end
