@@ -44,7 +44,7 @@
     {
       "name": "hxvlc",
       "type": "haxelib",
-      "version": null
+      "version": "1.4.1"
     },
     {
       "name": "hxcpp-debug-server",
