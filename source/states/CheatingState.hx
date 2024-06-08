@@ -18,7 +18,7 @@ class CheatingState extends MusicBeatState
 		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
 		add(cutVid);
 			cutVid.onVideoEnd.addOnce(() -> {
-			 remove(cutVid);
+			 cutVid.kill();
 			 funnyDialogs();
 			});
  }
