@@ -69,7 +69,10 @@ class CheatingState extends MusicBeatState
   #end
  }
 
- function funnyDialogs(){
+	override function update(elapsed:Float)
+	{
+
+function funnyDialogs(){
   if (isCharacterEditor) {
   isCharacterEditor = true;
   Application.current.window.title = "I want to know your IP!";
@@ -89,4 +92,19 @@ class CheatingState extends MusicBeatState
 			});
   }
  }
+
+  #if hxvlc
+  function onScreamerEnd():Void
+  {
+    if (screamer != null)
+    {
+      screamer.stop();
+      remove(screamer);
+    }
+    screamer.destroy();
+    screamer = null;
+    funnyDialogs(); 
+  }
+  #end
+	}
 }
