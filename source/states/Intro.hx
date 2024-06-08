@@ -44,8 +44,8 @@ class Intro extends MusicBeatState
 
   #if hxvlc
   playIntro(filePath);
+  var intro:FlxVideo = new FlxVideo();
   function playIntro(filePath:String) {
-    var intro:FlxVideo = new FlxVideo();
     // Video displays OVER the FlxState.
 
     if (intro != null)
