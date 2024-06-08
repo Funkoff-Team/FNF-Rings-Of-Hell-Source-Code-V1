@@ -10,6 +10,7 @@ using StringTools;
 class Intro extends MusicBeatState
 {
 	  var cutVid:Video = new Video();
+		var foundFile:Bool = false;
 
     override public function create()
     {
