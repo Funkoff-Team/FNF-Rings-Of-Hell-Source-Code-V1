@@ -22,7 +22,8 @@ class Intro extends MusicBeatState
     override public function create()
     {
 		var filePath:String = Paths.video('newgroundsintro');
-		#if hxCodec
+
+/*		#if hxCodec
     var video:VideoHandler = new VideoHandler();
 
       #if (hxCodec >= "3.0.0")
@@ -39,7 +40,7 @@ class Intro extends MusicBeatState
        MusicBeatState.switchState(new TitleState());
   }
   #end
-  #end
+  #end*/
 
   #if hxvlc
   playIntro(filePath);
