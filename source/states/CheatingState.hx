@@ -10,18 +10,16 @@ class CheatingState extends MusicBeatState
 {
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
+  var cutVid:Video = new Video();
 
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
-
-    var cutVid:Video = new Video();
 		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
 		add(cutVid);
     cutVid.onVideoEnd.addOnce(funnyDialogs());
  }
 
 function funnyDialogs(){
-  	cutVid.destroy();
 		remove(cutVid);
   if (isCharacterEditor) {
   isCharacterEditor = true;
