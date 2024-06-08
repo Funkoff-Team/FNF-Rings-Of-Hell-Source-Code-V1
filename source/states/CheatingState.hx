@@ -25,7 +25,7 @@ class CheatingState extends MusicBeatState
 
 		var filepath:String = Paths.video('ikwhatyouredoing');
 	
-		#if hxCodec
+/*		#if hxCodec
  		var screamer:VideoHandler = new VideoHandler();
 			#if (hxCodec >= "3.0.0")
 			screamer.play(filepath);
@@ -41,7 +41,7 @@ class CheatingState extends MusicBeatState
 				funnyDialogs();
 			}
 			#end
-      #end
+      #end*/
 
 			#if hxvlc
   playScreamer(filePath);
