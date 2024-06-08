@@ -19,7 +19,6 @@ class CheatingState extends MusicBeatState
 {
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
- 	public var finishCallback:Void->Void;
   var cutVid:Video = new Video();
 
  override function create(){
