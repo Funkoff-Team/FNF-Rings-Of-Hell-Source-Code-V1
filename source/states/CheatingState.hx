@@ -2,6 +2,7 @@ package states;
 
 import states.TitleState;
 import lime.app.Application;
+import flixel.FlxBasic;
 
 #if VIDEOS_ALLOWED
 import videos.Video;
