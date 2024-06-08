@@ -20,6 +20,8 @@ class CheatingState extends MusicBeatState
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
   var cutVid:Video = new Video();
+	var foundFile:Bool = false;
+
 
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
