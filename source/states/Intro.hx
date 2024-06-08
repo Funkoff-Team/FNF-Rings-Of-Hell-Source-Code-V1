@@ -1,5 +1,13 @@
 package states;
 
+#if sys
+import sys.*;
+import sys.io.*;
+#elseif js
+import js.html.*;
+#end
+import openfl.utils.Assets as OpenFlAssets;
+
 #if VIDEOS_ALLOWED
 import videos.Video;
 import flixel.FlxBasic;
@@ -17,9 +25,9 @@ class Intro extends MusicBeatState
 		var fileName:String = Paths.video('newgroundsintro');
 		
     	#if sys
-    	if FileSystem.exists(fileName)
+    	if (FileSystem.exists(fileName))
     	#else
-    	if OpenFlAssets.exists(fileName) 
+    	if (OpenFlAssets.exists(fileName))
     	#end 
     	foundFile = true;
 
