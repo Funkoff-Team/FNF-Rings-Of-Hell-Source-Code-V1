@@ -46,7 +46,8 @@ function funnyDialogs(){
 
 	override function update(elapsed:Float)
 	{
-	 public function finishVideo():Void{
+	 public function finishVideo():Void
+	 {
 		cutVid.destroy();
 		remove(cutVid);
     funnyDialogs();
