@@ -4,9 +4,8 @@ import states.TitleState;
 import lime.app.Application;
 
 #if VIDEOS_ALLOWED
-import hxvlc.flixel.FlxVideo;
-#end
-
+import videos.Video;
+import videos.VideoSprite;
 
 class CheatingState extends MusicBeatState
 {
@@ -16,28 +15,12 @@ class CheatingState extends MusicBeatState
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
 
-		var filepath:String = Paths.video('ikwhatyouredoing');
-    var screamer:FlxVideo = new FlxVideo();
-
-  function playScreamer(filePath:String) {
-
-    if (screamer != null)
-    {
-      screamer.onEndReached.add(onScreamerEnd);
-      add(screamer);
-
-      openfl.Assets.loadBytes(filePath).onComplete(function(bytes:openfl.utils.ByteArray):Void
-      {
-        if (screamer.load(bytes))
-          screamer.play();
-      });
-    }
-    else
-    {
-      trace('ALERT: Video is null! Could not play cutscene!');
-    }
-  }
-  playScreamer(filePath);
+    var cutVid:VideoSprite;
+	  cutVid = new VideoSprite();
+		cutVid.scrollFactor.set(0, 0);
+		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
+		add(cutVid);
+    cutVid.onVideoEnd.addOnce(finishVideo);
  }
 
 function funnyDialogs(){
@@ -63,16 +46,11 @@ function funnyDialogs(){
 
 	override function update(elapsed:Float)
 	{
-  function onScreamerEnd():Void
-  {
-    if (screamer != null)
-    {
-      screamer.stop();
-      remove(screamer);
-    }
-    screamer.destroy();
-    screamer = null;
-    funnyDialogs(); 
+	 public function finishVideo():Void{
+		cutVid.destroy();
+		remove(cutVid);
+    funnyDialogs();
+   }
   }
-	}
 }
+#end
