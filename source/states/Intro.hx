@@ -9,7 +9,7 @@ package states;
 #else import vlc.MP4Handler as VideoHandler;
 #end*/
 #if hxvlc
-import hxvlc.flixel.FlxVideo as VideoHandler;
+import hxvlc.flixel.FlxVideo;
 #end
 #end
 
