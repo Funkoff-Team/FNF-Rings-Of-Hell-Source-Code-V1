@@ -10,7 +10,6 @@ import openfl.utils.Assets as OpenFlAssets;
 
 #if VIDEOS_ALLOWED
 import videos.Video;
-import flixel.FlxBasic;
 import states.TitleState;
 
 using StringTools;
