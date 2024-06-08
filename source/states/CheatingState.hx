@@ -17,7 +17,6 @@ class CheatingState extends MusicBeatState
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
    var fileName:String = Paths.video('ikwhatyouredoing');
-		cutVid.startVideo(fileName);
 
     	#if sys
     	FileSystem.exists(fileName)
@@ -27,6 +26,7 @@ class CheatingState extends MusicBeatState
     	foundFile = true;
 
 		if(foundFile) {
+		  cutVid.startVideo(fileName);
 			cutVid.onVideoEnd.addOnce(() -> {
 			 if (finishCallback != null)
 			finishCallback();
