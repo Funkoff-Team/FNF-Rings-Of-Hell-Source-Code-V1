@@ -5,7 +5,6 @@ import lime.app.Application;
 
 #if VIDEOS_ALLOWED
 import videos.Video;
-import videos.VideoSprite;
 
 class CheatingState extends MusicBeatState
 {
@@ -15,12 +14,10 @@ class CheatingState extends MusicBeatState
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
 
-    var cutVid:VideoSprite;
-	  cutVid = new VideoSprite();
-		cutVid.scrollFactor.set(0, 0);
+    var cutVid:Video = new Video();
 		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
 		add(cutVid);
-    cutVid.onVideoEnd.addOnce(finishVideo);
+    cutVid.onVideoEnd.addOnce(funnyDialogs());
  }
 
 function funnyDialogs(){
