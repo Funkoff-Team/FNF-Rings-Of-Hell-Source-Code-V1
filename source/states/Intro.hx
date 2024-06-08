@@ -2,7 +2,7 @@ package states;
 
 #if VIDEOS_ALLOWED
 import videos.Video;
-
+import flixel.FlxBasic;
 import states.TitleState;
 
 using StringTools;
