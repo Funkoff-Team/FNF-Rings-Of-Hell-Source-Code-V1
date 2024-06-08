@@ -4,10 +4,14 @@ import states.TitleState;
 import lime.app.Application;
 
 #if VIDEOS_ALLOWED
+#if hxCodec
 #if (hxCodec >= "3.0.0") import hxcodec.flixel.FlxVideo as VideoHandler;
 #elseif (hxCodec >= "2.6.1") import hxcodec.VideoHandler as VideoHandler;
 #elseif (hxCodec == "2.6.0") import VideoHandler;
-#else import vlc.MP4Handler as VideoHandler; #end
+#else import vlc.MP4Handler as VideoHandler;
+#elseif hxvlc
+import hxvlc.flixel.FlxVideo as VideoHandler;
+#end
 #end
 
 class CheatingState extends MusicBeatState
@@ -19,6 +23,8 @@ class CheatingState extends MusicBeatState
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
 
 		var filepath:String = Paths.video('ikwhatyouredoing');
+	
+			#if hxCodec
  		var screamer:VideoHandler = new VideoHandler();
 			#if (hxCodec >= "3.0.0")
 			screamer.play(filepath);
@@ -34,6 +40,32 @@ class CheatingState extends MusicBeatState
 				funnyDialogs();
 			}
 			#end
+			#elseif hxvlc
+  playScreamer(filePath);
+  function playScreamer(filePath:String) {
+    var screamer:FlxVideo;
+    // Video displays OVER the FlxState.
+    screamer = new FlxVideo();
+
+    if (screamer != null)
+    {
+      screamer.bitmap.onEndReached.add(funnyDialogs);
+      add(screamer);
+
+      openfl.Assets.loadBytes(filePath).onComplete(function(bytes:openfl.utils.ByteArray):Void
+      {
+        if (screamer.load(bytes))
+          screamer.play();
+
+        onVideoStarted.dispatch();
+      });
+    }
+    else
+    {
+      trace('ALERT: Video is null! Could not play cutscene!');
+    }
+  }
+  #end
  }
 
  function funnyDialogs(){
