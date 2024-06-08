@@ -17,7 +17,7 @@ class CheatingState extends MusicBeatState
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
    var fileName:String = Paths.video('ikwhatyouredoing');
-		cutVid.startVideo(Paths.video(fileName);
+		cutVid.startVideo(Paths.video(fileName));
 
     	#if sys
     	FileSystem.exists(fileName)
