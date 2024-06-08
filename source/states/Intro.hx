@@ -29,7 +29,11 @@ class Intro extends MusicBeatState
 			finishCallback();
 			 MusicBeatState.switchState(new TitleState()); 
 			});
-    }
+    } else {
+			if (finishCallback != null)
+			finishCallback();
+			FlxG.log.warn('Couldnt find video file: ' + fileName);
+		}
   }
 }
 #end
