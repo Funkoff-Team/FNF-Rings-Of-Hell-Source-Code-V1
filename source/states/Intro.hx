@@ -17,6 +17,7 @@ using StringTools;
 
 class Intro extends MusicBeatState
 {
+	public var finishCallback:Void->Void;
 	  var cutVid:Video = new Video();
 		var foundFile:Bool = false;
 
