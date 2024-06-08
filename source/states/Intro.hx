@@ -6,7 +6,7 @@ package states;
 #elseif (hxCodec >= "2.6.1") import hxcodec.VideoHandler as VideoHandler;
 #elseif (hxCodec == "2.6.0") import VideoHandler;
 #else import vlc.MP4Handler as VideoHandler; #end
-#elseif hxvlc
+#if hxvlc
 import hxvlc.flixel.FlxVideo as VideoHandler;
 #end
 #end
@@ -36,7 +36,8 @@ class Intro extends MusicBeatState
    		{
        MusicBeatState.switchState(new TitleState());
   }
-  #elseif hxvlc
+  #end
+  #if hxvlc
   playIntro(filePath);
   function playIntro(filePath:String) {
     var intro:FlxVideo;
