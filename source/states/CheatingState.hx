@@ -4,11 +4,11 @@ import states.TitleState;
 import lime.app.Application;
 
 #if VIDEOS_ALLOWED
-#if hxCodec
+/*#if hxCodec
 #if (hxCodec >= "3.0.0") import hxcodec.flixel.FlxVideo as VideoHandler;
 #elseif (hxCodec >= "2.6.1") import hxcodec.VideoHandler as VideoHandler;
 #elseif (hxCodec == "2.6.0") import VideoHandler;
-#else import vlc.MP4Handler as VideoHandler; #end
+#else import vlc.MP4Handler as VideoHandler; #end*/
 #if hxvlc
 import hxvlc.flixel.FlxVideo as VideoHandler;
 #end
