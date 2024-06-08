@@ -1,5 +1,13 @@
 package states;
 
+#if sys
+import sys.*;
+import sys.io.*;
+#elseif js
+import js.html.*;
+#end
+import openfl.utils.Assets as OpenFlAssets;
+
 import states.TitleState;
 import lime.app.Application;
 import flixel.FlxBasic;
@@ -19,9 +27,9 @@ class CheatingState extends MusicBeatState
    var fileName:String = Paths.video('ikwhatyouredoing');
 
     	#if sys
-    	if FileSystem.exists(fileName)
+    	if (FileSystem.exists(fileName))
     	#else
-    	if OpenFlAssets.exists(fileName) 
+    	if (OpenFlAssets.exists(fileName))
     	#end 
     	foundFile = true;
 
