@@ -24,6 +24,8 @@ class CheatingState extends MusicBeatState
  }
 
 function funnyDialogs(){
+  	cutVid.destroy();
+		remove(cutVid);
   if (isCharacterEditor) {
   isCharacterEditor = true;
   Application.current.window.title = "I want to know your IP!";
@@ -43,15 +45,5 @@ function funnyDialogs(){
 			});
   }
  }
-
-	override function update(elapsed:Float)
-	{
-	 public function finishVideo():Void
-	 {
-		cutVid.destroy();
-		remove(cutVid);
-    funnyDialogs();
-   }
-  }
 }
 #end
