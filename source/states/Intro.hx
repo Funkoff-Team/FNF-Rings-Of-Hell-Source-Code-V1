@@ -19,7 +19,6 @@ class Intro extends MusicBeatState
 	  cutVid = new VideoSprite();
 		cutVid.scrollFactor.set(0, 0);
 		cutVid.startVideo(Paths.video('newgroundsintro'));
-		cutVid.cameras = [camOther];
 		add(cutVid);
     cutVid.onVideoEnd.addOnce(finishVideo);
   }
