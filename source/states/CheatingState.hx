@@ -46,9 +46,7 @@ class CheatingState extends MusicBeatState
 			#if hxvlc
   playScreamer(filePath);
   function playScreamer(filePath:String) {
-    var screamer:FlxVideo;
-    // Video displays OVER the FlxState.
-    screamer = new FlxVideo();
+    var screamer:FlxVideo = new FlxVideo();
 
     if (screamer != null)
     {
