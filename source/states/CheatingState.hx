@@ -9,7 +9,7 @@ import lime.app.Application;
 #elseif (hxCodec >= "2.6.1") import hxcodec.VideoHandler as VideoHandler;
 #elseif (hxCodec == "2.6.0") import VideoHandler;
 #else import vlc.MP4Handler as VideoHandler; #end
-#elseif hxvlc
+#if hxvlc
 import hxvlc.flixel.FlxVideo as VideoHandler;
 #end
 #end
@@ -25,7 +25,7 @@ class CheatingState extends MusicBeatState
 
 		var filepath:String = Paths.video('ikwhatyouredoing');
 	
-			#if hxCodec
+		#if hxCodec
  		var screamer:VideoHandler = new VideoHandler();
 			#if (hxCodec >= "3.0.0")
 			screamer.play(filepath);
@@ -41,7 +41,7 @@ class CheatingState extends MusicBeatState
 				funnyDialogs();
 			}
 			#end
-			#elseif hxvlc
+			#if hxvlc
   playScreamer(filePath);
   function playScreamer(filePath:String) {
     var screamer:FlxVideo;
