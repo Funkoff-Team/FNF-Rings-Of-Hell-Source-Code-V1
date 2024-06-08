@@ -37,6 +37,8 @@ class Intro extends MusicBeatState
        MusicBeatState.switchState(new TitleState());
   }
   #end
+  #end
+
   #if hxvlc
   playIntro(filePath);
   function playIntro(filePath:String) {
