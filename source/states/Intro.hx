@@ -1,7 +1,7 @@
 package states;
 
 #if VIDEOS_ALLOWED
-import hxvlc.flixel.FlxVideo;
+import videos.Video;
 
 import states.TitleState;
 
@@ -13,8 +13,7 @@ class Intro extends MusicBeatState
     override public function create()
     {
     var cutVid:VideoSprite;
-	  cutVid = new VideoSprite();
-		cutVid.scrollFactor.set(0, 0);
+	  cutVid = new Video();
 		cutVid.startVideo(Paths.video('newgroundsintro'));
 		add(cutVid);
     cutVid.onVideoEnd.addOnce(finishVideo);
