@@ -41,6 +41,8 @@ class CheatingState extends MusicBeatState
 				funnyDialogs();
 			}
 			#end
+      #end
+
 			#if hxvlc
   playScreamer(filePath);
   function playScreamer(filePath:String) {
@@ -69,9 +71,6 @@ class CheatingState extends MusicBeatState
   #end
  }
 
-	override function update(elapsed:Float)
-	{
-
 function funnyDialogs(){
   if (isCharacterEditor) {
   isCharacterEditor = true;
@@ -93,6 +92,8 @@ function funnyDialogs(){
   }
  }
 
+	override function update(elapsed:Float)
+	{
   #if hxvlc
   function onScreamerEnd():Void
   {
