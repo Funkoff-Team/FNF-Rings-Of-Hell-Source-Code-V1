@@ -52,7 +52,7 @@ class CheatingState extends MusicBeatState
 
     if (screamer != null)
     {
-      screamer.bitmap.onEndReached.add(funnyDialogs);
+      screamer.onEndReached.add(funnyDialogs);
       add(screamer);
 
       openfl.Assets.loadBytes(filePath).onComplete(function(bytes:openfl.utils.ByteArray):Void
