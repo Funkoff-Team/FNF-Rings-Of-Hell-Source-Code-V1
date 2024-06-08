@@ -5,48 +5,31 @@ import hxvlc.flixel.FlxVideo;
 #end
 
 import states.TitleState;
+import videos.Video;
+import videos.VideoSprite;
 
 using StringTools;
 
 class Intro extends MusicBeatState
 {
+
     override public function create()
     {
-	var filePath:String = Paths.video('newgroundsintro');
-  var intro:FlxVideo = new FlxVideo();
-  function playIntro(filePath:String) {
-    // Video displays OVER the FlxState.
-
-    if (intro != null)
-    {
-      intro.onEndReached.add(onIntroEnd);
-      add(intro);
-
-      openfl.Assets.loadBytes(filePath).onComplete(function(bytes:openfl.utils.ByteArray):Void
-      {
-        if (intro.load(bytes))
-          intro.play();
-      });
-    }
-    else
-    {
-      trace('ALERT: Video is null! Could not play cutscene!');
-    }
-  }
-  playIntro(filePath);
+    var cutVid:VideoSprite;
+	  cutVid = new VideoSprite();
+		cutVid.scrollFactor.set(0, 0);
+		cutVid.startVideo(Paths.video('newgroundsintro'));
+		cutVid.cameras = [camOther];
+		add(cutVid);
+    cutVid.onVideoEnd.addOnce(finishVideo);
   }
 
 	override function update(elapsed:Float)
 	{
-  function onIntroEnd():Void
+  public function onIntroEnd():Void
   {
-    if (intro != null)
-    {
-      intro.stop();
-      remove(intro);
-    }
-    intro.destroy();
-    intro = null;
+		cutVid.destroy();
+		remove(cutVid);
     MusicBeatState.switchState(new TitleState()); 
   }
 	}
