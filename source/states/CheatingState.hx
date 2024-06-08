@@ -10,7 +10,7 @@ import lime.app.Application;
 #elseif (hxCodec == "2.6.0") import VideoHandler;
 #else import vlc.MP4Handler as VideoHandler; #end*/
 #if hxvlc
-import hxvlc.flixel.FlxVideo as VideoHandler;
+import hxvlc.flixel.FlxVideo;
 #end
 #end
 
