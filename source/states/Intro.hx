@@ -16,7 +16,6 @@ class Intro extends MusicBeatState
 		cutVid.startVideo(Paths.video('newgroundsintro'));
 		add(cutVid);
 			cutVid.onVideoEnd.addOnce(() -> {
-			 remove(cutVid);
 			 MusicBeatState.switchState(new TitleState()); 
 			});
     }
