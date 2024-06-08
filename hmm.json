@@ -44,12 +44,7 @@
     {
       "name": "hxCodec",
       "type": "haxelib",
-      "version": "2.6.0"
-    },
-    {
-      "name": "SScript",
-      "type": "haxelib",
-      "version": "8.1.6"
+      "version": "2.6.1"
     },
     {
       "name": "hxcpp-debug-server",
@@ -74,13 +69,6 @@
       "dir": null,
       "ref": "dev",
       "url": "https://github.com/ShadowMario/flxanimate"
-    },
-    {
-      "name": "linc_luajit",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/superpowers04/linc_luajit"
     }
   ]
 }
