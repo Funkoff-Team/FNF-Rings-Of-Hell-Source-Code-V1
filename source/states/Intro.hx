@@ -58,8 +58,6 @@ class Intro extends MusicBeatState
       {
         if (intro.load(bytes))
           intro.play();
-
-        onVideoStarted.dispatch();
       });
     }
     else
