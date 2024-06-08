@@ -19,9 +19,9 @@ class CheatingState extends MusicBeatState
    var fileName:String = Paths.video('ikwhatyouredoing');
 
     	#if sys
-    	FileSystem.exists(fileName)
+    	if FileSystem.exists(fileName)
     	#else
-    	OpenFlAssets.exists(fileName) 
+    	if OpenFlAssets.exists(fileName) 
     	#end 
     	foundFile = true;
 
