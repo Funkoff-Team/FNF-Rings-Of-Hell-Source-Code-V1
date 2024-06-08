@@ -47,7 +47,7 @@ class Main extends Sprite
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
-		initialState: SpecsDetector, // initial game state
+		initialState: Intro, // initial game state
 		zoom: -1.0, // game state bounds
 		framerate: 60, // default framerate
 		skipSplash: false, // if the default flixel splash screen should be skipped
@@ -77,7 +77,7 @@ class Main extends Sprite
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
 		#if android
-		Sys.setCwd(Path.addTrailingSlash(SUtil.getPath()));
+		Sys.setCwd(Path.addTrailingSlash(Generic.returnPath()));
 		#elseif ios
 		Sys.setCwd(lime.system.System.applicationStorageDirectory);
 		#end
@@ -125,9 +125,9 @@ class Main extends Sprite
 
 		#if desktop
 		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));	
-	  #else
-  	addChild(new FlxGame(1280, 720, SpecsDetector, 60, 60, false, false));
-  	#end
+	        #else
+  	        addChild(new FlxGame(1280, 720, Intro, 60, 60, false, false));
+  	        #end
 
 		FlxG.signals.preStateSwitch.add(function () {
 			if (!Main.skipNextDump) {
