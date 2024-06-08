@@ -26,14 +26,10 @@ class Intro extends MusicBeatState
     	if (OpenFlAssets.exists(fileName))
     	foundFile = true;
 
-		if(foundFile) {
 		  cutVid.startVideo(fileName);
 			cutVid.onVideoEnd.addOnce(() -> {
 			 MusicBeatState.switchState(new TitleState()); 
 			});
-    } else {
-			FlxG.log.warn('Couldnt find video file: ' + fileName);
-		}
   }
 }
 #end
