@@ -9,10 +9,10 @@ using StringTools;
 
 class Intro extends MusicBeatState
 {
+	  var cutVid:Video = new Video();
 
     override public function create()
     {
-	  var cutVid:Video = new Video();
 		cutVid.startVideo(Paths.video('newgroundsintro'));
 		add(cutVid);
     cutVid.onVideoEnd.addOnce(finishVideo());
