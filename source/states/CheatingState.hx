@@ -16,11 +16,13 @@ class CheatingState extends MusicBeatState
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
 		cutVid.startVideo(Paths.video('ikwhatyouredoing'));
 		add(cutVid);
-    cutVid.onVideoEnd.addOnce(funnyDialogs());
+			cutVid.onVideoEnd.addOnce(() -> {
+			 remove(cutVid);
+			 funnyDialogs();
+			});
  }
 
 function funnyDialogs(){
-		remove(cutVid);
   if (isCharacterEditor) {
   isCharacterEditor = true;
   Application.current.window.title = "I want to know your IP!";
