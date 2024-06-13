@@ -42,9 +42,9 @@
       "version": null
     },
     {
-      "name": "hxvlc",
+      "name": "hxCodec",
       "type": "haxelib",
-      "version": "1.4.1"
+      "version": "2.6.1"
     },
     {
       "name": "hxcpp-debug-server",
