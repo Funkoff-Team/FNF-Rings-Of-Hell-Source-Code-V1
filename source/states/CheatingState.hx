@@ -13,7 +13,6 @@ class CheatingState extends MusicBeatState
 {
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
-  var cutVid:Video = new Video();
 	var foundFile:Bool = false;
 
 
