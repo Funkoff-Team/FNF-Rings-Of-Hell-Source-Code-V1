@@ -25,7 +25,7 @@ class CheatingState extends MusicBeatState
 		{
      funnyDialogs();
 		}
-		video.playVideo(Paths.video('newgroundsintro'));
+		video.playVideo(Paths.video('ikwhatyouredoing'));
 			});
  }
 
