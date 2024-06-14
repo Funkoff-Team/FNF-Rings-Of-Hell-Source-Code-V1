@@ -43,17 +43,17 @@ class Video extends VideoHandler
 	public function startVideo(path:String, loop:Bool = false #if hxvlc ,?options:Array<String> #end):Video
 	{
 		#if (hxCodec >= "3.0.0"  && hxCodec)
-        #if android
+        /*#if android
         play(Asset2File.getPath(path), loop)
-        #else
+        #else*/
         play(path, loop);
-        #end
+        //#end
         #elseif (hxCodec < "3.0.0"  && hxCodec)
-        #if android
+        /*#if android
         playVideo(Asset2File.getPath(path), loop, false)
-        #else
+        #else*/
         playVideo(path, loop, false);
-        #end
+        //#end
         #elseif hxvlc
 		if(options == null)
 			options = [];
@@ -61,11 +61,11 @@ class Video extends VideoHandler
 			options.push(':input-repeat=2');
 		else
 			options.push(':input-repeat=0');
-		#if android
+		/*#if android
         load(Asset2File.getPath(path), options);
-		#else
+		#else*/
         load(path, options);
-		#end
+		//#end
         play();
 		#end
 		return this;

@@ -67,12 +67,10 @@
 <assets path="assets/fonts" />
 <assets path="assets/shared"        exclude="*.ogg" if="web"/>
 <assets path="assets/shared"        exclude="*.mp3" unless="web"/>
-<assets path="assets/videos"        library="videos"        if="desktop VIDEOS_ALLOWED"/>
-<assets path="assets/videos" if="mobile VIDEOS_ALLOWED"/> <!-- aaaa -->
+<assets path="assets/videos" if="VIDEOS_ALLOWED"/> <!-- aaaa -->
 <assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
 <assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
 
-<library name="videos"        preload="true" if="desktop VIDEOS_ALLOWED"/>
 <library name="songs"         preload="true" />
 
 <define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>

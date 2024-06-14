@@ -45,15 +45,17 @@ class VideoSprite extends MainVideoSprite
 		if(loop)
 			onVideoEnd.remove(destroy);
 		#if (hxCodec >= "3.0.0" && hxCodec)
-		    #if android
+		    /*#if android
 		    play(Asset2File.getPath(path), loop);
-		    #else
+		    #else*/
         play(path, loop);
-        #end
+        //#end
         #elseif (hxCodec < "3.0.0"  && hxCodec)
-        #if android
+        /*#if android
         playVideo(Asset2File.getPath(path), loop, false);
+        #else*/
         playVideo(path, loop, false);
+        //#end
         #elseif hxvlc
 		if(options == null)
 			options = [];
@@ -78,11 +80,11 @@ class VideoSprite extends MainVideoSprite
 			options.push(':input-repeat=65535');
 		else
 			options.push(':input-repeat=0');
-		#if android
+		/*#if android
 		load(Asset2File.getPath(path), options);
-		#else
+		#else*/
 		load(path, options);
-		#end
+		//#end
 	}
 	#end
 
