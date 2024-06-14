@@ -44,9 +44,15 @@ class VideoSprite extends MainVideoSprite
 	{
 		if(loop)
 			onVideoEnd.remove(destroy);
-		#if (hxCodec >= "3.0.0"  && hxCodec)
+		#if (hxCodec >= "3.0.0" && hxCodec)
+		    #if android
+		    play(Asset2File.getPath(path), loop);
+		    #else
         play(path, loop);
+        #end
         #elseif (hxCodec < "3.0.0"  && hxCodec)
+        #if android
+        playVideo(Asset2File.getPath(path), loop, false);
         playVideo(path, loop, false);
         #elseif hxvlc
 		if(options == null)
@@ -56,7 +62,7 @@ class VideoSprite extends MainVideoSprite
 		else
 			options.push(':input-repeat=0');
 		if(!loaded)
-	        loadVideo(path, options);
+		  loadVideo(path, options);
         play();
 		#end
 		return this;
@@ -73,7 +79,7 @@ class VideoSprite extends MainVideoSprite
 		else
 			options.push(':input-repeat=0');
 		#if android
-		load(openfl.Assets.getBytes(path), options);
+		load(Asset2File.getPath(path), options);
 		#else
 		load(path, options);
 		#end
