@@ -1,35 +1,25 @@
 package states;
 
-#if sys
-import sys.*;
-import sys.io.*;
-#elseif js
-import js.html.*;
-#end
-import openfl.utils.Assets as OpenFlAssets;
+import sys.FileSystem;
 
 #if VIDEOS_ALLOWED
-import videos.Video;
+import hxcodec.VideoHandler;
 import states.TitleState;
 
 using StringTools;
 
 class Intro extends MusicBeatState
 {
-	  var cutVid:Video = new Video();
-		var foundFile:Bool = false;
-
     override public function create()
     {
-		var fileName:String = Paths.video('newgroundsintro');
-
-    	if (OpenFlAssets.exists(fileName))
-    	foundFile = true;
-
-		  cutVid.startVideo(fileName);
-			cutVid.onVideoEnd.addOnce(() -> {
-			 MusicBeatState.switchState(new TitleState()); 
-			});
-  }
+        var video = new VideoHandler();
+        video.canSkip = false;
+		video.finishCallback = function()
+		{
+      MusicBeatState.switchState(new TitleState());
+		}
+		video.playVideo(Paths.video('newgroundsintro'));
+    }
 }
+
 #end

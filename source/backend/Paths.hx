@@ -172,18 +172,17 @@ class Paths
 
   static public function video(key:String)
     {
-        #if (hxvlc && android)
-        // hxvlc supports playing videos from bytes meaning we use the videos library
-        return 'videos:assets/videos/$key.$VIDEO_EXT';
-        #else
-        		#if MODS_ALLOWED
+    #if MODS_ALLOWED
 		var file:String = modsVideo(key);
 		if(FileSystem.exists(file)) {
 			return file;
 		}
 		#end
-        return 'assets/videos/$key.$VIDEO_EXT';
-        #end
+		#if android
+		return Asset2File.getPath('assets/videos/$key.$VIDEO_EXT');
+		#else
+		return 'assets/videos/$key.$VIDEO_EXT';
+		#end
     }
 
 	static public function sound(key:String, ?library:String):Sound

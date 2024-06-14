@@ -1,40 +1,31 @@
 package states;
 
-#if sys
-import sys.*;
-import sys.io.*;
-#elseif js
-import js.html.*;
-#end
-import openfl.utils.Assets as OpenFlAssets;
+
+import sys.FileSystem;
 
 import states.TitleState;
 import lime.app.Application;
-import flixel.FlxBasic;
 
 #if VIDEOS_ALLOWED
-import videos.Video;
+import hxcodec.VideoHandler;
 
 class CheatingState extends MusicBeatState
 {
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
-  var cutVid:Video = new Video();
 	var foundFile:Bool = false;
 
 
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
-   var fileName:String = Paths.video('ikwhatyouredoing');
-
-    	if (OpenFlAssets.exists(fileName))
-    	foundFile = true;
-
-		  cutVid.startVideo(fileName);
-			cutVid.onVideoEnd.addOnce(() -> {
-			 funnyDialogs();
-			});
- }
+   	var video = new VideoHandler();
+    video.canSkip = false;
+		video.finishCallback = function()
+		{
+     funnyDialogs();
+		}
+		video.playVideo(Paths.video('ikwhatyouredoing'));
+	}
 
 function funnyDialogs(){
   if (isCharacterEditor) {
