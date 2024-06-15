@@ -163,7 +163,7 @@ class LanguageState extends MusicBeatState
 
 		var text:FlxText = new FlxText(560 + 700, 650, 700, "", 21);
 		text.setFormat(Paths.font('DungGeunMo.ttf'), 30, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		text.applyMarkup("Press $SPACE$ to continue.\n$SPACE$를 눌러 계속하기.", [new FlxTextFormatMarkerPair(new FlxTextFormat(FlxColor.YELLOW), "$")]);
+		text.applyMarkup("$Tap$ to continue.\n$Tap$를 눌러 계속하기.", [new FlxTextFormatMarkerPair(new FlxTextFormat(FlxColor.YELLOW), "$")]);
 		text.cameras = [camHUD];
 		add(text);
 
@@ -327,7 +327,19 @@ class LanguageState extends MusicBeatState
 				reloadCheckboxes();
 			}
 
-			if (FlxG.keys.justPressed.SPACE && canPressSpace)
+		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
+
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				pressedEnter = true;
+			}
+		}
+		#end
+
+			if (FlxG.keys.justPressed.SPACE #if mobile pressedEnter #end && canPressSpace)
 			{
 				leftState = true;
 				canMove = false;
