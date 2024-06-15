@@ -173,6 +173,7 @@ class NoteOffsetState extends MusicBeatState
 		super.create();
 		#if mobile
 		addVirtualPad(LEFT_FULL, A_B);
+		#end
 	}
 
 	var holdTime:Float = 0;
