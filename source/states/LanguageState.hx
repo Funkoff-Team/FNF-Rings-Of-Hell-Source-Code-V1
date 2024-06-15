@@ -339,7 +339,7 @@ class LanguageState extends MusicBeatState
 		}
 		#end
 
-			if (FlxG.keys.justPressed.SPACE #if mobile pressedEnter #end && canPressSpace)
+			if (#if desktop FlxG.keys.justPressed.SPACE #else pressedEnter #end && canPressSpace)
 			{
 				leftState = true;
 				canMove = false;
