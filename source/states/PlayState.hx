@@ -572,6 +572,11 @@ class PlayState extends MusicBeatState
 		noteGroup.cameras = [camHUD];
 		comboGroup.cameras = [camHUD];
 
+   #if mobile
+   addMobileControls(false);
+   mobileControls.visible = false;
+   #end
+
 		startingSong = true;
 
 		#if LUA_ALLOWED
@@ -945,6 +950,10 @@ class PlayState extends MusicBeatState
 			callOnScripts('onStartCountdown');
 			return false;
 		}
+
+    #if mobile
+    mobileControls.visible = true;
+    #end
 
 		seenCutscene = true;
 		inCutscene = false;
@@ -2311,6 +2320,10 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong()
 	{
+    #if mobile
+    mobileControls.visible = false;
+    #end
+
 		//Should kill you if you tried to cheat
 		if(!startingSong) {
 			notes.forEach(function(daNote:Note) {
