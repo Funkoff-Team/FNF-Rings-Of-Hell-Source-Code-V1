@@ -61,7 +61,7 @@ class StoryMenuState extends MusicBeatState
 
 	var real:Int = 0;
 
-	var oneclickpls:Bool = true;
+	//var oneclickpls:Bool = true;
 
 	var bfIDLELAWL:StoryModeMenuBFidle;
 
@@ -272,12 +272,12 @@ class StoryMenuState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		if (controls.UI_LEFT && oneclickpls)
+		if (controls.UI_LEFT)
 			leftArrow.animation.play('press');
 		else
 			leftArrow.animation.play('idle');
 
-		if (controls.UI_LEFT_P && oneclickpls)
+		if (controls.UI_LEFT_P)
 		{
 			if (selection)
 				changeAct(-1);
@@ -285,12 +285,12 @@ class StoryMenuState extends MusicBeatState
 				changediff(-1);
 		}
 
-		if (controls.UI_RIGHT && oneclickpls)
+		if (controls.UI_RIGHT)
 			rightArrow.animation.play('press');
 		else
 			rightArrow.animation.play('idle');
 
-		if (controls.UI_RIGHT_P && oneclickpls)
+		if (controls.UI_RIGHT_P)
 		{
 			if (selection)
 				changeAct(1);
@@ -298,10 +298,10 @@ class StoryMenuState extends MusicBeatState
 				changediff(1);
 		}
 
-		if ((controls.UI_UP_P && oneclickpls) || (controls.UI_DOWN_P && oneclickpls))
+		if ((controls.UI_UP_P) || (controls.UI_DOWN_P))
 			changeSelec(); // i forgor how ifs work
 
-		if (controls.BACK && oneclickpls)
+		if (controls.BACK)
 		{
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new MainMenuState());
@@ -309,9 +309,6 @@ class StoryMenuState extends MusicBeatState
 
 		if (controls.ACCEPT)
 		{
-			if (oneclickpls)
-			{
-				oneclickpls = false;
 				var curDifficulty = '';
 
 				FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -340,7 +337,7 @@ class StoryMenuState extends MusicBeatState
 				{
 					LoadingState.loadAndSwitchState(new PlayState(), true);
 				});
-			}
+			
 
 			if (FlxG.save.data.flashing)
 			{
