@@ -274,12 +274,12 @@ class StoryMenuState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		if (controls.UI_LEFT)
+		if (#if desktop controls.UI_LEFT #else virtualPad.buttonLeft.justPressed #end)
 			leftArrow.animation.play('press');
 		else
 			leftArrow.animation.play('idle');
 
-		if (controls.UI_LEFT_P)
+		if (#if desktop controls.UI_LEFT_P #else virtualPad.buttonLeft.justPressed #end)
 		{
 			if (selection)
 				changeAct(-1);
@@ -287,12 +287,12 @@ class StoryMenuState extends MusicBeatState
 				changediff(-1);
 		}
 
-		if (controls.UI_RIGHT)
+		if (#if desktop controls.UI_RIGHT #else virtualPad.buttonRight.justPressed #end)
 			rightArrow.animation.play('press');
 		else
 			rightArrow.animation.play('idle');
 
-		if (controls.UI_RIGHT_P)
+		if (#if desktop controls.UI_RIGHT_P #else virtualPad.buttonRight.justPressed #end)
 		{
 			if (selection)
 				changeAct(1);
@@ -300,16 +300,16 @@ class StoryMenuState extends MusicBeatState
 				changediff(1);
 		}
 
-		if ((controls.UI_UP_P) || (controls.UI_DOWN_P))
+		if ((#if desktop controls.UI_UP_P #else virtualPad.buttonUp.justPressed #end) || (#if desktop controls.UI_DOWN_P #else virtualPad.buttonDown.justPressed #end))
 			changeSelec(); // i forgor how ifs work
 
-		if (controls.BACK)
+		if (#if desktop controls.BACK #else virtualPad.buttonB.justPressed #end)
 		{
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new MainMenuState());
 		}
 
-		if (controls.ACCEPT)
+		if (#if desktop controls.ACCEPT #else virtualPad.buttonA.justPressed #end)
 		{
 				var curDifficulty = '';
 
