@@ -209,6 +209,10 @@ class FreeplayState extends MusicBeatState
 		add(whiteshit);
 
 		songText.text = songArray[curSelected];
+	
+	#if mobile
+	addVirtualPad(LEFT_RIGHT, A_B);
+	#end
 	}
 
 	var selectin:Bool = false;
