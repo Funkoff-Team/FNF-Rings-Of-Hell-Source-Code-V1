@@ -103,7 +103,10 @@ class LanguageState extends MusicBeatState
 							startDelay: 0.1,
 							ease: FlxEase.circInOut
 						});
+						new FlxTimer().start(0.7, function(tmr:FlxTimer)
+						{
 							tweenOptions();
+						});
 					}
 				});
 			}
@@ -187,14 +190,14 @@ class LanguageState extends MusicBeatState
 		optionTitle.alpha = 0.5;
 		optionTitle.x = 50;
 		optionTitle.y = -100;
-		optionTitle.cameras = [camGame];
+		optionTitle.cameras = [camHUD];
 		add(optionTitle);
 
 		for (i in 0...optionsArray.length)
 		{
 			var optionText:Alphabet = new Alphabet(0, 0, optionsArray[i].name, true);
 			optionText.isMenuItem = false;
-			optionText.cameras = [camGame];
+			optionText.cameras = [camHUD];
 
 			optionText.y = 250 + (150 * i);
 			optionText.x = 215 + (30 * i);
@@ -208,7 +211,7 @@ class LanguageState extends MusicBeatState
 			checkbox.scale.set(0.8, 0.8);
 			checkbox.updateHitbox();
 			checkbox.ID = i;
-			checkbox.cameras = [camGame];
+			checkbox.cameras = [camHUD];
 
 			@:privateAccess
 			checkbox.animationFinished(checkbox.daValue ? 'checking' : 'unchecking');
@@ -233,7 +236,7 @@ class LanguageState extends MusicBeatState
 		reloadCheckboxes();
 	}
 
-	function tweenOptions()
+	function tweenptions()
 	{
 		FlxTween.tween(optionTitle, {y: 90}, 0.9, {
 			ease: FlxEase.circInOut,
