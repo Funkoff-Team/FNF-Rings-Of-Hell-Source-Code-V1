@@ -103,11 +103,7 @@ class LanguageState extends MusicBeatState
 							startDelay: 0.1,
 							ease: FlxEase.circInOut
 						});
-
-						new FlxTimer().start(0.7, function(tmr:FlxTimer)
-						{
 							tweenOptions();
-						});
 					}
 				});
 			}
