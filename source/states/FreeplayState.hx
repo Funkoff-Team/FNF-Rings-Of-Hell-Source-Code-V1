@@ -46,6 +46,11 @@ class FreeplayState extends MusicBeatState
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
+	#if mobile
+	addVirtualPad(LEFT_RIGHT, A_B);
+	addVirtualPadCamera(false);
+	#end
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Freeplay Menu", null);
@@ -209,11 +214,6 @@ class FreeplayState extends MusicBeatState
 		add(whiteshit);
 
 		songText.text = songArray[curSelected];
-	
-	#if mobile
-	addVirtualPad(LEFT_RIGHT, A_B);
-	addVirtualPadCamera(false);
-	#end
 	}
 
 	var selectin:Bool = false;
