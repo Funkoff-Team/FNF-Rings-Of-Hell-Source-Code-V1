@@ -236,7 +236,7 @@ class LanguageState extends MusicBeatState
 		reloadCheckboxes();
 	}
 
-	function tweenptions()
+	function tweenOptions()
 	{
 		FlxTween.tween(optionTitle, {y: 90}, 0.9, {
 			ease: FlxEase.circInOut,
