@@ -391,7 +391,7 @@ class FreeplayState extends MusicBeatState
 		}
 	}
 
-	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/shared/images'):Array<String>
+	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/shared/data'):Array<String>
 	{
 		var libraryArray:Array<String> = [];
 
