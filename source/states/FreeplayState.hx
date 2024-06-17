@@ -114,7 +114,7 @@ class FreeplayState extends MusicBeatState
 				boxedShit.add(boxLol);
 
 				var artShit:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
-				if (Assets.exists(Paths.getPath('images/menus/EYX/freeplay/portraits/${i}.png', TEXT)))
+				if (Assets.exists(Paths.image('images/menus/EYX/freeplay/portraits/${i}.png', TEXT)))
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/${i}'));
 				else
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/error'));
