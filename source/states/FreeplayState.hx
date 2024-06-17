@@ -12,6 +12,8 @@ import flixel.addons.effects.FlxSkewedSprite;
 import flixel.math.FlxMath;
 import openfl.utils.Assets;
 
+using StringTools;
+
 class FreeplayState extends MusicBeatState
 {
 	var folderList:Array<String> = returnAssetsLibrary('data', 'assets/shared');
@@ -400,7 +402,7 @@ class FreeplayState extends MusicBeatState
 
 		for (folder in unfilteredLibrary)
 		{
-			if (!folder.contains('.'))
+			if (!folder.startsWith('.'))
 				libraryArray.push(folder);
 		}
 		trace(libraryArray);
