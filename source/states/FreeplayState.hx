@@ -16,7 +16,7 @@ using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
-	var folderList:Array<String> = returnAssetsLibrary('data', 'assets/shared');
+	var folderList:Array<String> = ['bloodnight', 'sussus-hillus'];
 
 	var maxSelect:Int = 0;
 	public static var curSelected:Int = 0;
@@ -111,7 +111,7 @@ class FreeplayState extends MusicBeatState
 		var folderNum:Int = 0;
 		for (i in folderList)
 		{
-			if (!i.startsWith('modchart') && i.endsWith('.json'))
+			if (Assets.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-null.json', TEXT)))
 			{
 				var boxLol:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
 				boxLol.loadGraphic(Paths.image('menus/EYX/freeplay/FreeBox'));
