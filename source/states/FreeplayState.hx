@@ -109,9 +109,9 @@ class FreeplayState extends MusicBeatState
 		add(boxedShit);
 
 		var folderNum:Int = 0;
-		for (i in folderList)
+		for (i in 0...folderList)
 		{
-			if (Assets.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-null.json', TEXT)))
+			if (Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}.json', TEXT)) || Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}-hard.json', TEXT)) || Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}-null.json', TEXT)))
 			{
 				var boxLol:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
 				boxLol.loadGraphic(Paths.image('menus/EYX/freeplay/FreeBox'));
