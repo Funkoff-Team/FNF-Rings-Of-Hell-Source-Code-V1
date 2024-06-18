@@ -138,7 +138,7 @@ class FreeplayState extends MusicBeatState
 				folderNum += 1;
 
 				trace('found song ${i}');
-			//}
+			}
 /*			else if (FileSystem.exists(Paths.getPath('data/${i}/${i}.json', TEXT)))
 			{
 				var boxLol:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
