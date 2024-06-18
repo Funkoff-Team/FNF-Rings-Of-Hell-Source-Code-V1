@@ -109,7 +109,7 @@ class FreeplayState extends MusicBeatState
 		add(boxedShit);
 
 		var folderNum:Int = 0;
-		for (i in 0...folderList)
+		for (i in folderList)
 		{
 			if (Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}.json', TEXT)) || Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}-hard.json', TEXT)) || Assets.exists(Paths.getPath('data/${folderList[i]}/${folderList[i]}-null.json', TEXT)))
 			{
