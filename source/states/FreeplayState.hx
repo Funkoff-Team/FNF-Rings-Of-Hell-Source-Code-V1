@@ -47,10 +47,7 @@ class FreeplayState extends MusicBeatState
 	{
 	  #if mobile
 		addVirtualPad(LEFT_RIGHT, A_B);
-		addVirtualPadCamera(false);
 		#end
-
-	  super.create();
 
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
