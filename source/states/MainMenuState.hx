@@ -7,7 +7,8 @@ import lime.app.Application;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
 import states.credits.CreditsMenuState;
-import states.SoundTestMenu;
+//import states.SoundTestMenu;
+import flixel.math.FlxRect;
 
 class MainMenuState extends MusicBeatState
 {
@@ -50,11 +51,14 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
+		FlxG.mouse.visible = true;
+
 		/*transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;*/
 
 		persistentUpdate = persistentDraw = true;
 
+    public var hitbox:FlxRect;
 		var yScroll:Float = 0;
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menus/EYX/mainmenu/menuBG'));
 		bg.scrollFactor.set(0, yScroll);
