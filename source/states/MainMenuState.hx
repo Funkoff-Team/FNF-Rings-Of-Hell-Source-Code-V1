@@ -58,7 +58,7 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-    public var hitbox:FlxRect;
+        // public var hitbox:FlxRect;
 		var yScroll:Float = 0;
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menus/EYX/mainmenu/menuBG'));
 		bg.scrollFactor.set(0, yScroll);

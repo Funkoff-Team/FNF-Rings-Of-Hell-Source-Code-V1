@@ -45,10 +45,6 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-	  #if mobile
-		addVirtualPad(LEFT_RIGHT, A_B);
-		#end
-
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
@@ -215,6 +211,11 @@ class FreeplayState extends MusicBeatState
 		add(whiteshit);
 
 		songText.text = songArray[curSelected];
+		
+		#if mobile
+		addVirtualPad(LEFT_RIGHT, A_B);
+		addVirtualPadCamera(false);
+		#end
 	}
 
 	var selectin:Bool = false;
