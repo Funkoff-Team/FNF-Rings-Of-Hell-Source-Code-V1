@@ -58,6 +58,7 @@ class ProgrammersState extends MusicBeatState
 			['MaysLastPlay', 'mays', 'Main Director, Programmer, Tester', 'https://www.youtube.com/@MaysLastPlay', 			'FFFFFF'],
 			['LJeno', '2jeno',  'Director, Main Programmer, Composer, Modcharter, Tester', 'https://www.youtube.com/channel/UCaL6FmmA0a7u8mC1xX9yUOA',	'FFFFFF'],
 			['Dx', 'dxgamer', 'Programmer', 'https://youtube.com/@Dxgamer7405', 'FFFFFF'],
+			['Idklool', 'idklool', 'Programmer', 'https://youtube.com/@idklool122', 'FFFFFF'],
 			['coolaydang', 'coolaydang', 'Programmer', 'https://youtube.com/@thecoolaydang8104?si=uX9Uh1z_5madeX5S', 'FFFFFF'],
 			['Meridian', 'meridian', 'Director, Programmer, Tester', 'https://youtube.com/@Meridian3455?si=pj_EgMi0oj1kPGe4', 			'FFFFFF'],
 			['Moxie', 'none', 'Programmer', 'https://youtube.com/@moxie-the-specialist?si=Q4F83QphGc4CZH8t', 			'FFFFFF'],
