@@ -50,19 +50,19 @@ class FPSCounter extends TextField
 	var deltaTimeout:Float = 0.0;
 
 	// Event Handlers
-	private override function __enterFrame(deltaTime:Float):Void
+  	private override function __enterFrame(deltaTime:Float):Void
 	{
+		// prevents the overlay from updating every frame, why would you need to anyways
 		if (deltaTimeout > 1000) {
 			deltaTimeout = 0.0;
 			return;
 		}
 
-		var now:Float = haxe.Timer.stamp();
+		final now:Float = haxe.Timer.stamp() * 1000;
 		times.push(now);
-		while (times[0] < now - 1000)
-			times.shift();
+		while (times[0] < now - 1000) times.shift();
 
-		currentFPS = currentFPS < FlxG.updateFramerate ? times.length : FlxG.updateFramerate;		
+		currentFPS = times.length < FlxG.updateFramerate ? times.length : FlxG.updateFramerate;		
 		updateText();
 		deltaTimeout += deltaTime;
 	}
