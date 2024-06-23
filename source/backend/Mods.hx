@@ -48,7 +48,7 @@ class Mods
 	inline public static function getModDirectories():Array<String>
 	{
 		var list:Array<String> = [];
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		var modsFolder:String = Paths.mods();
 		if(FileSystem.exists(modsFolder)) {
 			for (folder in FileSystem.readDirectory(modsFolder))
@@ -92,12 +92,12 @@ class Mods
 	inline public static function directoriesWithFile(path:String, fileToFind:String, mods:Bool = true)
 	{
 		var foldersToCheck:Array<String> = [];
-		#if sys
+		#if (sys && !mobile)
 		if(FileSystem.exists(path + fileToFind))
 		#end
 			foldersToCheck.push(path + fileToFind);
 
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		if(mods)
 		{
 			// Global mods first
@@ -124,13 +124,13 @@ class Mods
 
 	public static function getPack(?folder:String = null):Dynamic
 	{
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		if(folder == null) folder = Mods.currentModDirectory;
 
 		var path = Paths.mods(folder + '/pack.json');
 		if(FileSystem.exists(path)) {
 			try {
-				#if sys
+				#if (sys && !mobile)
 				var rawJson:String = File.getContent(path);
 				#else
 				var rawJson:String = Assets.getText(path);
@@ -149,7 +149,7 @@ class Mods
 		if(!updatedOnState) updateModList();
 		var list:ModsList = {enabled: [], disabled: [], all: []};
 
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		try {
 			for (mod in CoolUtil.coolTextFile('modsList.txt'))
 			{
@@ -172,7 +172,7 @@ class Mods
 	
 	private static function updateModList()
 	{
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		// Find all that are already ordered
 		var list:Array<Array<Dynamic>> = [];
 		var added:Array<String> = [];
@@ -221,7 +221,7 @@ class Mods
 	{
 		Mods.currentModDirectory = '';
 		
-		#if MODS_ALLOWED
+		#if (MODS_ALLOWED && !mobile)
 		var list:Array<String> = Mods.parseList().enabled;
 		if(list != null && list[0] != null)
 			Mods.currentModDirectory = list[0];

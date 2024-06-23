@@ -1,42 +1,33 @@
 package states;
 
+
+import sys.FileSystem;
+
 import states.TitleState;
 import lime.app.Application;
 
 #if VIDEOS_ALLOWED
-#if (hxCodec >= "3.0.0") import hxcodec.flixel.FlxVideo as VideoHandler;
-#elseif (hxCodec >= "2.6.1") import hxcodec.VideoHandler as VideoHandler;
-#elseif (hxCodec == "2.6.0") import VideoHandler;
-#else import vlc.MP4Handler as VideoHandler; #end
-#end
+import hxcodec.VideoHandler;
 
 class CheatingState extends MusicBeatState
 {
  public static var isChartEditor:Bool = false;
  public static var isCharacterEditor:Bool = false;
+	var foundFile:Bool = false;
+
 
  override function create(){
    	Application.current.window.title = "Friday Night Funkin': Rings Of Hell - Cheating!";
+   	var video = new VideoHandler();
+    video.canSkip = false;
+		video.finishCallback = function()
+		{
+     funnyDialogs();
+		}
+		video.playVideo(Paths.video('ikwhatyouredoing'));
+	}
 
-		var filepath:String = Paths.video('ikwhatyouredoing');
- 		var screamer:VideoHandler = new VideoHandler();
-			#if (hxCodec >= "3.0.0")
-			screamer.play(filepath);
-			screamer.onEndReached.add(function()
-			{
-				screamer.dispose();
-				funnyDialogs();
-			}, true);
-			#else
-			screamer.playVideo(filepath);
-			screamer.finishCallback = function()
-			{
-				funnyDialogs();
-			}
-			#end
- }
-
- function funnyDialogs(){
+function funnyDialogs(){
   if (isCharacterEditor) {
   isCharacterEditor = true;
   Application.current.window.title = "I want to know your IP!";
@@ -57,3 +48,4 @@ class CheatingState extends MusicBeatState
   }
  }
 }
+#end

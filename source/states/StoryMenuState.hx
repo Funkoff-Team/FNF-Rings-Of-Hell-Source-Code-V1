@@ -19,7 +19,6 @@ import lime.net.curl.CURLCode;
 import backend.MusicBeatState;
 import backend.Discord;
 import backend.Song;
-import sys.FileSystem;
 
 using StringTools;
 
@@ -61,7 +60,7 @@ class StoryMenuState extends MusicBeatState
 
 	var real:Int = 0;
 
-	var oneclickpls:Bool = true;
+	//var oneclickpls:Bool = true;
 
 	var bfIDLELAWL:StoryModeMenuBFidle;
 
@@ -198,6 +197,11 @@ class StoryMenuState extends MusicBeatState
 
 		sprDifficulty.offset.x = 70;
 		sprDifficulty.y = leftArrow.y + 10;
+
+		#if mobile
+		addVirtualPad(LEFT_FULL, A_B);
+		addVirtualPadCamera(false);
+		#end
     }
 
 	function changediff(diff:Int = 1)
@@ -269,12 +273,12 @@ class StoryMenuState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		if (controls.UI_LEFT && oneclickpls)
+		if (#if desktop controls.UI_LEFT #else virtualPad.buttonLeft.justPressed #end)
 			leftArrow.animation.play('press');
 		else
 			leftArrow.animation.play('idle');
 
-		if (controls.UI_LEFT_P && oneclickpls)
+		if (#if desktop controls.UI_LEFT_P #else virtualPad.buttonLeft.justPressed #end)
 		{
 			if (selection)
 				changeAct(-1);
@@ -282,12 +286,12 @@ class StoryMenuState extends MusicBeatState
 				changediff(-1);
 		}
 
-		if (controls.UI_RIGHT && oneclickpls)
+		if (#if desktop controls.UI_RIGHT #else virtualPad.buttonRight.justPressed #end)
 			rightArrow.animation.play('press');
 		else
 			rightArrow.animation.play('idle');
 
-		if (controls.UI_RIGHT_P && oneclickpls)
+		if (#if desktop controls.UI_RIGHT_P #else virtualPad.buttonRight.justPressed #end)
 		{
 			if (selection)
 				changeAct(1);
@@ -295,20 +299,17 @@ class StoryMenuState extends MusicBeatState
 				changediff(1);
 		}
 
-		if ((controls.UI_UP_P && oneclickpls) || (controls.UI_DOWN_P && oneclickpls))
+		if ((#if desktop controls.UI_UP_P #else virtualPad.buttonUp.justPressed #end) || (#if desktop controls.UI_DOWN_P #else virtualPad.buttonDown.justPressed #end))
 			changeSelec(); // i forgor how ifs work
 
-		if (controls.BACK && oneclickpls)
+		if (#if desktop controls.BACK #else virtualPad.buttonB.justPressed #end)
 		{
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxG.switchState(new MainMenuState());
 		}
 
-		if (controls.ACCEPT)
+		if (#if desktop controls.ACCEPT #else virtualPad.buttonA.justPressed #end)
 		{
-			if (oneclickpls)
-			{
-				oneclickpls = false;
 				var curDifficulty = '';
 
 				FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -337,7 +338,7 @@ class StoryMenuState extends MusicBeatState
 				{
 					LoadingState.loadAndSwitchState(new PlayState(), true);
 				});
-			}
+			
 
 			if (FlxG.save.data.flashing)
 			{

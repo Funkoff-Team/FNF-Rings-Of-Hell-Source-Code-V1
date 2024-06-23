@@ -170,16 +170,20 @@ class Paths
 		return getPath('$key.lua', TEXT, library);
 	}
 
-	static public function video(key:String)
-	{
-		#if MODS_ALLOWED
+  static public function video(key:String)
+    {
+    #if MODS_ALLOWED
 		var file:String = modsVideo(key);
 		if(FileSystem.exists(file)) {
 			return file;
 		}
 		#end
+		#if android
+		return Asset2File.getPath('assets/videos/$key.$VIDEO_EXT');
+		#else
 		return 'assets/videos/$key.$VIDEO_EXT';
-	}
+		#end
+    }
 
 	static public function sound(key:String, ?library:String):Sound
 	{
@@ -469,7 +473,7 @@ class Paths
 
 	#if MODS_ALLOWED
 	inline static public function mods(key:String = '') {
-		return 'mods/' + key;
+		return #if mobile Sys.getCwd() + #end 'mods/' + key;
 	}
 
 	inline static public function modsFont(key:String) {
@@ -531,7 +535,7 @@ class Paths
 			if(FileSystem.exists(fileToCheck))
 				return fileToCheck;
 		}
-		return 'mods/' + key;
+		return  #if mobile Sys.getCwd() + #end 'mods/' + key;
 	}
 	#end
 

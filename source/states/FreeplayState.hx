@@ -10,10 +10,13 @@ import substates.GameplayChangersSubstate;
 import substates.ResetScoreSubState;
 import flixel.addons.effects.FlxSkewedSprite;
 import flixel.math.FlxMath;
+import openfl.utils.Assets;
+
+using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
-	var folderList:Array<String> = returnAssetsLibrary('data', 'assets/shared');
+	var folderList:Array<String> = ['bloodnight', 'sussus-hillus'];
 
 	var maxSelect:Int = 0;
 	public static var curSelected:Int = 0;
@@ -103,7 +106,7 @@ class FreeplayState extends MusicBeatState
 		var folderNum:Int = 0;
 		for (i in folderList)
 		{
-			if (FileSystem.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || FileSystem.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)))
+			if (Assets.exists(Paths.getPath('data/${i}/${i}.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-hard.json', TEXT)) || Assets.exists(Paths.getPath('data/${i}/${i}-null.json', TEXT)))
 			{
 				var boxLol:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
 				boxLol.loadGraphic(Paths.image('menus/EYX/freeplay/FreeBox'));
@@ -113,7 +116,7 @@ class FreeplayState extends MusicBeatState
 				boxedShit.add(boxLol);
 
 				var artShit:FlxSkewedSprite = new FlxSkewedSprite((folderNum * 420), 0);
-				if (FileSystem.exists(Paths.getPath('images/menus/EYX/freeplay/portraits/${i}.png', TEXT)))
+				if (Assets.exists(Paths.getPath('images/menus/EYX/freeplay/portraits/${i}.png', IMAGE)))
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/${i}'));
 				else
 					artShit.loadGraphic(Paths.image('menus/EYX/freeplay/portraits/error'));
@@ -208,6 +211,12 @@ class FreeplayState extends MusicBeatState
 		add(whiteshit);
 
 		songText.text = songArray[curSelected];
+
+		super.create();
+		
+		#if mobile
+		addVirtualPad(LEFT_RIGHT, A_B);
+		#end
 	}
 
 	var selectin:Bool = false;
@@ -222,7 +231,8 @@ class FreeplayState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-
+		super.update(elapsed);
+		
 		if (FlxG.sound.music.volume < 0.7)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
@@ -385,16 +395,16 @@ class FreeplayState extends MusicBeatState
 		}
 	}
 
-	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/shared/images'):Array<String>
+	public static function returnAssetsLibrary(library:String, ?subDir:String = 'assets/shared/data'):Array<String>
 	{
 		var libraryArray:Array<String> = [];
 
 		#if sys
-		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
+		var unfilteredLibrary = Assets.list().filter(text -> text.contains('$subDir/$library'));
 
 		for (folder in unfilteredLibrary)
 		{
-			if (!folder.contains('.'))
+			if (!folder.startsWith('.'))
 				libraryArray.push(folder);
 		}
 		trace(libraryArray);

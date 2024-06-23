@@ -8,7 +8,7 @@
     {
       "name": "openfl",
       "type": "haxelib",
-      "version": "9.3.2"
+      "version": "9.2.2"
     },
     {
       "name": "flixel",
@@ -18,7 +18,7 @@
     {
       "name": "flixel-addons",
       "type": "haxelib",
-      "version": "3.2.1"
+      "version": "3.1.1"
     },
     {
       "name": "flixel-tools",
@@ -33,7 +33,7 @@
     {
       "name": "hxcpp",
       "type": "haxelib",
-      "version": null
+      "version": "4.2.1"
 
     },
     {
@@ -47,11 +47,6 @@
       "version": "2.6.1"
     },
     {
-      "name": "SScript",
-      "type": "haxelib",
-      "version": "8.1.6"
-    },
-    {
       "name": "hxcpp-debug-server",
       "type": "haxelib",
       "version": null
@@ -62,18 +57,11 @@
       "version": null
     },
     {
-      "name": "hxdiscord_rpc",
+      "name": "extension-androidtools",
       "type": "git",
       "dir": null,
       "ref": "main",
-      "url": "https://github.com/MAJigsaw77/hxdiscord-rpc"
-    },
-    {
-      "name": "fnf-modcharting-tools",
-      "type": "git",
-      "dir": null,
-      "ref": "main",
-      "url": "https://github.com/EdwhakKB/FNF-Modcharting-Tools"
+      "url": "https://github.com/MasterX-39/oldtools"
     },
     {
       "name": "flxanimate",
@@ -81,13 +69,6 @@
       "dir": null,
       "ref": "dev",
       "url": "https://github.com/ShadowMario/flxanimate"
-    },
-    {
-      "name": "linc_luajit",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/superpowers04/linc_luajit"
     }
   ]
 }

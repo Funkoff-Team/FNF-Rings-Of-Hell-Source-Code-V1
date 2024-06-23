@@ -1,9 +1,5 @@
 package;
 
-#if android
-import android.content.Context;
-#end
-
 import debug.FPSCounter;
 
 import flixel.graphics.FlxGraphic;
@@ -17,7 +13,9 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
 import states.TitleState;
-import states.SpecsDetector;
+import states.Intro;
+import sys.FileSystem;
+import sys.io.File;
 
 #if linux
 import lime.graphics.Image;
@@ -51,7 +49,7 @@ class Main extends Sprite
 	var game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
-		initialState: SpecsDetector, // initial game state
+		initialState: Intro, // initial game state
 		zoom: -1.0, // game state bounds
 		framerate: 60, // default framerate
 		skipSplash: false, // if the default flixel splash screen should be skipped
@@ -77,9 +75,11 @@ class Main extends Sprite
 	{
 		super();
 
+		Generic.initCrashHandler();
+
 		// Credits to MAJigsaw77 (he's the og author for this code)
 		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+		Sys.setCwd(Path.addTrailingSlash(Generic.returnPath()));
 		#elseif ios
 		Sys.setCwd(lime.system.System.applicationStorageDirectory);
 		#end
@@ -106,6 +106,15 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+
+		#if android 
+		Generic.mode = ROOTDATA;
+
+		if (!FileSystem.exists('assets')) {
+			FileSystem.createDirectory('assets');
+		}
+		#end
+
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -123,11 +132,14 @@ class Main extends Sprite
 		ClientPrefs.loadDefaultKeys();
 		#if ACHIEVEMENTS_ALLOWED Achievements.load(); #end
 
+		/*#if hxvlc
+		hxvlc.util.Handle.initAsync();
+		#end*/
 		#if desktop
 		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));	
-	  #else
-  	addChild(new FlxGame(1280, 720, SpecsDetector, 60, 60, false, false));
-  	#end
+	        #else
+  	        addChild(new FlxGame(1280, 720, Intro, 60, 60, false, false));
+  	        #end
 
 		FlxG.signals.preStateSwitch.add(function () {
 			if (!Main.skipNextDump) {
