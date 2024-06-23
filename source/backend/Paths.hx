@@ -178,7 +178,7 @@ class Paths
 			return file;
 		}
 		#end
-		#if android
+		#if (android && ios)
 		return Asset2File.getPath('assets/videos/$key.$VIDEO_EXT');
 		#else
 		return 'assets/videos/$key.$VIDEO_EXT';
