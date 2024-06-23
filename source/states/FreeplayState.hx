@@ -211,10 +211,11 @@ class FreeplayState extends MusicBeatState
 		add(whiteshit);
 
 		songText.text = songArray[curSelected];
+
+		super.create();
 		
 		#if mobile
 		addVirtualPad(LEFT_RIGHT, A_B);
-		addVirtualPadCamera(false);
 		#end
 	}
 
@@ -230,7 +231,8 @@ class FreeplayState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-
+		super.update(elapsed);
+		
 		if (FlxG.sound.music.volume < 0.7)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
