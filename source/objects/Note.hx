@@ -1,7 +1,5 @@
 package objects;
 
-import flixel.addons.effects.FlxSkewedSprite;
-
 import backend.animation.PsychAnimationController;
 import backend.NoteTypesConfig;
 
@@ -38,8 +36,7 @@ typedef NoteSplashData = {
  * 
  * If you want to make a custom note type, you should search for: "function set_noteType"
 **/
-
-class Note extends FlxSkewedSprite
+class Note extends FlxSprite
 {
 	public var extraData:Map<String, Dynamic> = new Map<String, Dynamic>();
 

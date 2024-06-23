@@ -5,9 +5,7 @@ import backend.animation.PsychAnimationController;
 import shaders.RGBPalette;
 import shaders.RGBPalette.RGBShaderReference;
 
-import flixel.addons.effects.FlxSkewedSprite;
-
-class StrumNote extends FlxSkewedSprite
+class StrumNote extends FlxSprite
 {
 	public var rgbShader:RGBShaderReference;
 	public var resetAnim:Float = 0;
